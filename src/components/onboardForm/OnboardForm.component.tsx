@@ -8,6 +8,7 @@ import {
 } from '../../utils/validation';
 import { submitProfile } from '../../services/form-api';
 import { useCorporationNumber } from '../../hooks/useCorporationNumber';
+import Button from '../button/button.component';
 
 const OnboardForm: React.FC<{}> = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -93,13 +94,12 @@ const OnboardForm: React.FC<{}> = () => {
               onBlur={handleCorporationBlur}
               loading={loading}
             />
-            <button
+            <Button
               type="submit"
-              className="w-full bg-black text-white mt-12 py-4 rounded-xl text-lg flex items-center justify-center gap-2 hover:bg-gray-900 transition"
-            >
-              Submit
-              <span className="ml-2">&rarr;</span>
-            </button>
+              text="Submit"
+              postChild={<span className="ml-2">&rarr;</span>}
+              className="mt-12"
+            />
             {errors.root && (
               <span className="text-red-500 text-sm mt-4 block text-center">
                 {errors.root.message}
@@ -111,14 +111,12 @@ const OnboardForm: React.FC<{}> = () => {
             <p className="text-center font-medium text-lg mb-10">
               Successfully submitted!!
             </p>
-            <button
+            <Button
               type="button"
-              className="w-full bg-black text-white py-4 rounded-xl text-lg flex items-center justify-center gap-2 hover:bg-gray-900 transition"
+              text="Back"
               onClick={() => setFormSubmitted(false)}
-            >
-              <span className="ml-2">&larr;</span>
-              Back
-            </button>
+              preChild={<span className="ml-2">&larr;</span>}
+            />
           </div>
         )}
       </div>

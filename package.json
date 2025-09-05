@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "test": "npx jest --config=jest.config.cjs --globals '{\"ts-jest\": {\"tsconfig\": \"tsconfig.jest.json\"}}'",
+    "test:watch": "npm test -- --watch",
     "test:coverage": "npx jest --coverage --config=jest.config.cjs --globals '{\"ts-jest\": {\"tsconfig\": \"tsconfig.jest.json\"}}'",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
