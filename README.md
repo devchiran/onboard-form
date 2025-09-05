@@ -21,6 +21,18 @@ npm install
 npm run dev
 ```
 
+- Run test cases
+
+```js
+npm run test
+```
+
+- Check test coverage
+
+```js
+npm run test:coverage
+```
+
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:

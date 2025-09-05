@@ -1,5 +1,6 @@
 import axios from 'axios';
 import type { OnboardFormData } from '../utils/validation';
+import { getApiBase } from '../config/apiBase';
 
 export type CorporationValidation = {
   corporationNumber?: string;
@@ -12,7 +13,7 @@ export type ProfileSubmissionResponse = {
   success: boolean;
 };
 
-const API_BASE = import.meta.env.VITE_API_BASE;
+const API_BASE = getApiBase();
 
 export async function validateCorporationNumber(
   corporationNumber: string,
